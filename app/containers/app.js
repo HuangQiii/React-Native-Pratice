@@ -42,7 +42,7 @@ const TabContainer = TabNavigator(
         }
     },
     {
-        initialRouteName: 'Main',
+        initialRouteName: 'Loan',
         lazy: true,
         swipeEnabled: false,
         tabBarPosition: 'bottom',

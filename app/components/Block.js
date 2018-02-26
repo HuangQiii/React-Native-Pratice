@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ViewPropTypes, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { ViewPropTypes, StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 
 const propTypes = {
     width: PropTypes.number,
@@ -46,7 +46,10 @@ const Block = ({
                     <Text style={styles.content}>{content}</Text>
                 </View>
                 <View style={[styles.pic, { width: (height - (row + 1) * marginTop) / row }]}>
-                    <View style={[styles.pretendImg, { height: (height - (row + 1) * marginTop) / row - 20, width: (height - (row + 1) * marginTop) / row - 20, borderRadius: ((height - (row + 1) * marginTop) / row - 20) / 2 }]}></View>
+                    {/*<View style={[styles.pretendImg, { height: (height - (row + 1) * marginTop) / row - 20, width: (height - (row + 1) * marginTop) / row - 20, borderRadius: ((height - (row + 1) * marginTop) / row - 20) / 2 }]}></View>*/}
+                    <View style={[styles.pretendImg, { overflow: 'hidden', height: (height - (row + 1) * marginTop) / row - 20, width: (height - (row + 1) * marginTop) / row - 20, borderRadius: ((height - (row + 1) * marginTop) / row - 20) / 2 }]}>
+                        <Image resizeMode='stretch' style={{ height: (height - (row + 1) * marginTop) / row - 20, width: (height - (row + 1) * marginTop) / row - 20, }} source={{ uri: pic }} />
+                    </View>
                 </View>
             </View>
         </TouchableOpacity>
