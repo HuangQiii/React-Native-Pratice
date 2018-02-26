@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text,ListView,Image ,ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Button from '..//components/Button';
 
 var DATA = [
     {
@@ -88,10 +89,47 @@ export default class Loan extends Component {
             <ScrollView>
                 <View style={styles.container}>
                     <View style = {{ flexDirection:'row',alignItems:'center',padding:5,paddingLeft:10,borderBottomWidth:1,borderBottomColor:'#eee', }}>
-                        <Icon name="md-list" size={15} color={'#101010'} /><Text>贷款筛选</Text>
+                        <Icon name="md-list" size={15} color={'#101010'} style={{marginRight:10,}} /><Text>贷款筛选</Text>
                     </View>
-                    <View>
-                        
+                    <View style={{padding:10,borderBottomColor:'#eee',borderBottomWidth:1,}}>
+                        <View style={{flexDirection:'row',alignItems:'center',marginBottom:10,}}>
+                            <Text style={{fontSize:16,color:'#101010'}}>职业身份</Text>
+                            <Button 
+                                text={'全部'}
+                                style={{marginLeft:25}}
+                            />
+                            <Button 
+                                text={'上班族'}
+                                style={{marginLeft:25}}
+                            />
+                            <Button 
+                                text={'企业主'}
+                                style={{marginLeft:25}}
+                            />
+                            <Button 
+                                text={'个体户'}
+                                style={{marginLeft:25}}
+                            />
+                        </View>
+                        <View style={{flexDirection:'row',alignItems:'center'}}>
+                            <Text style={{fontSize:16,color:'#101010'}}>贷款金额</Text>
+                            <Button 
+                                text={'全部'}
+                                style={{marginLeft:25}}
+                            />
+                            <Button 
+                                text={'3000+'}
+                                style={{marginLeft:25}}
+                            />
+                            <Button 
+                                text={'30000+'}
+                                style={{marginLeft:25}}
+                            />
+                            <Button 
+                                text={'100000+'}
+                                style={{marginLeft:25}}
+                            />
+                        </View>
                     </View>
                     <View style={{justifyContent:'center',padding:5,paddingLeft:10}}>
                         <Text style={{color:'#A8A8A8',}}>共80个结果</Text>
