@@ -164,7 +164,6 @@ export default class Invest extends Component {
     }
 
     renderList(list) {
-        console.log(list);
         const item = list.item;
         return (
             <View style={{ flexDirection: 'row', height: 120, borderTopWidth: 1, borderTopColor: '#eee' }}>
