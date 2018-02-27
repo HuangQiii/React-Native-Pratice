@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ViewPropTypes, StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const propTypes = {
     width: PropTypes.number,
@@ -13,6 +14,9 @@ const propTypes = {
     title: PropTypes.string,
     content: PropTypes.string,
     pic: PropTypes.string,
+    borderRadius: PropTypes.number,
+    titleColor:PropTypes.string,
+    contentColor:PropTypes.string,
 
     onPress: PropTypes.func,
     disabled: PropTypes.bool,
@@ -30,6 +34,10 @@ const Block = ({
     title,
     content,
     pic,
+    borderRadius,
+    titleColor,
+    contentColor,
+    icon,
 
     onPress,
     disabled,
@@ -40,15 +48,19 @@ const Block = ({
             disabled={disabled}
             activeOpacity={activeOpacity}
         >
-            <View style={[styles.block, { width: (width - (col + 1) * marginLeft) / col, height: (height - (row + 1) * marginTop) / row, marginLeft: marginLeft, marginTop: marginTop }]}>
+            <View style={[styles.block, { width: (width - (col + 1) * marginLeft) / col, height: (height - (row + 1) * marginTop) / row, marginLeft: marginLeft, marginTop: marginTop, borderRadius:borderRadius,backgroundColor:bgColor }]}>
                 <View style={styles.text}>
-                    <Text style={styles.title}>{title}</Text>
-                    <Text style={styles.content}>{content}</Text>
+                    <Text style={[styles.title,{color:titleColor}]}>{title}</Text>
+                    <Text style={[styles.content,{color:contentColor}]}>{content}</Text>
                 </View>
                 <View style={[styles.pic, { width: (height - (row + 1) * marginTop) / row }]}>
                     {/*<View style={[styles.pretendImg, { height: (height - (row + 1) * marginTop) / row - 20, width: (height - (row + 1) * marginTop) / row - 20, borderRadius: ((height - (row + 1) * marginTop) / row - 20) / 2 }]}></View>*/}
-                    <View style={[styles.pretendImg, { overflow: 'hidden', height: (height - (row + 1) * marginTop) / row - 20, width: (height - (row + 1) * marginTop) / row - 20, borderRadius: ((height - (row + 1) * marginTop) / row - 20) / 2 }]}>
-                        <Image resizeMode='stretch' style={{ height: (height - (row + 1) * marginTop) / row - 20, width: (height - (row + 1) * marginTop) / row - 20, }} source={{ uri: pic }} />
+                    <View style={[styles.pretendImg, { overflow: 'hidden', height: (height - (row + 1) * marginTop) / row - 20, width: (height - (row + 1) * marginTop) / row - 20, borderRadius: ((height - (row + 1) * marginTop) / row - 20) / 2 }]}>   
+                        {icon === ''?
+                            <Image resizeMode='stretch' style={{ height: (height - (row + 1) * marginTop) / row - 20, width: (height - (row + 1) * marginTop) / row - 20, }} source={{ uri: pic }} />
+                            :
+                            <Icon name={icon} size={30} color={'#fff'} />
+                        }
                     </View>
                 </View>
             </View>
@@ -65,11 +77,15 @@ Block.defaultProps = {
     row: 1,
     marginLeft: 0,
     marginTop: 0,
+    borderRadius: 0,
+    bgColor: '#EBF0F2',
+    titleColor:'#fff',
+    contentColor:'#fff',
+    icon:'',
 };
 
 var styles = StyleSheet.create({
     block: {
-        backgroundColor: '#EBF0F2',
         flexDirection: 'row',
     },
     text: {
@@ -79,11 +95,9 @@ var styles = StyleSheet.create({
         paddingTop: 8,
     },
     title: {
-        color: '#012A36',
         fontSize: 16,
     },
     content: {
-        color: '#607D8B',
         fontSize: 12,
     },
     pic: {
@@ -91,7 +105,8 @@ var styles = StyleSheet.create({
         alignItems: 'center',
     },
     pretendImg: {
-        backgroundColor: 'blue'
+        alignItems:'center',
+        justifyContent:'center',
     }
 });
 

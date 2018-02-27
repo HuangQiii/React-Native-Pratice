@@ -23,7 +23,9 @@ export default class Find extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Find</Text>
+                <View>
+                    <Image resizeMode='stretch' style={styles.image} source={{ uri: 'https://modao.cc/uploads3/images/972/9722742/raw_1495518328.jpeg' }} />
+                </View>
             </View >
         );
     }

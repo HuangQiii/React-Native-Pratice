@@ -143,6 +143,8 @@ export default class Main extends Component {
                             title={'贷款大全'}
                             content={'总有适合你'}
                             pic={'https://modao.cc/uploads3/images/974/9740779/raw_1495541439.jpeg'}
+                            titleColor={'#012A36'}
+                            contentColor={'#607D8B'}
                         />
                         <Block
                             width={width}
@@ -154,6 +156,8 @@ export default class Main extends Component {
                             title={'投资渠道'}
                             content={'最全的投资信息'}
                             pic={'https://modao.cc/uploads3/images/974/9740774/raw_1495541436.jpeg'}
+                            titleColor={'#012A36'}
+                            contentColor={'#607D8B'}
                         />
                         <Block
                             width={width}
@@ -165,6 +169,8 @@ export default class Main extends Component {
                             title={'分享赚钱'}
                             content={'奖励不重样'}
                             pic={'https://modao.cc/uploads3/images/974/9740782/raw_1495541441.jpeg'}
+                            titleColor={'#012A36'}
+                            contentColor={'#607D8B'}
                         />
                         <Block
                             width={width}
@@ -176,6 +182,8 @@ export default class Main extends Component {
                             title={'新手专属'}
                             content={'抢先贷款'}
                             pic={'https://modao.cc/uploads3/images/974/9740780/raw_1495541440.jpeg'}
+                            titleColor={'#012A36'}
+                            contentColor={'#607D8B'}
                         />
                     </View>
                     <View style={styles.special}>
