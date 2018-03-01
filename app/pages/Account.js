@@ -6,7 +6,7 @@ const {width,height} = Dimensions.get('window');
 export default class Login extends Component {
 
     static navigationOptions = ({ navigation }) => ({
-        title: `登录`,
+        title: `贷款管家`,
     });
 
     constructor(props) {
@@ -21,21 +21,22 @@ export default class Login extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.title}>输入手机号</Text>
-                <Text style={styles.des}>登录进行获取贷款</Text>
+                <View style={styles.block}>
+                    <Text style={styles.title}>200.00</Text>
+                    <Text style={styles.des}>可体现金额</Text>
 
-                <View style={styles.inputs}>
-                    <TextInput
-                        defaultValue={'手机号'}
-                    />
-                    <TextInput
-                        defaultValue={'验证码'}
-                    />
+                    <View style={styles.whiteBlock}>
+                        <View style={[styles.smBlock,{borderRightColor:'#eee',borderRightWidth:1,}]}>
+                            <Text>历史提现</Text>
+                        </View>
+                        <View style={styles.smBlock}>
+                            <Text>收入明细</Text>
+                        </View>
+                    </View>
                 </View>
-
                 <TouchableOpacity>
                     <View style={styles.button}>
-                        <Text style={{color:'#fff'}}>下一步</Text>
+                        <Text style={{color:'#fff'}}>申请提现</Text>
                     </View>
                 </TouchableOpacity>
             </View >
@@ -47,17 +48,36 @@ var styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FEFEFE',
-        paddingHorizontal:35,
+        alignItems:'center',
+    },
+    block: {
+        height:187,
+        backgroundColor:'#3F51B5',
         alignItems:'center',
     },
     title: {
-        fontSize:24,
-        marginTop:60,
+        fontSize:32,
+        marginTop:20,
+        color:'#fff',
     },
     des: {
-        fontSize:18,
-        color:'#eee',
+        fontSize:12,
+        color:'#fff',
         marginTop:10,
+    },
+    whiteBlock:{
+        flexDirection:'row',
+        marginHorizontal:60,
+        height:45,
+        justifyContent:'center',
+        alignItems:'center',
+        marginTop:20,
+        backgroundColor:'#fff',
+    },
+    smBlock:{
+        width:(width - 120) / 2,
+        alignItems:'center',
+        justifyContent:'center',
     },
     inputs:{
         width:width - 70,

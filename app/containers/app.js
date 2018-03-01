@@ -1,6 +1,8 @@
 import { StackNavigator, TabNavigator, NavigationActions } from 'react-navigation';
 // import Menu from '../pages/Menu';
 import Login from '../pages/Login';
+import Account from '../pages/Account';
+import User from '../pages/User';
 import Main from '../pages/Main';
 import Loan from '../pages/Loan';
 import Invest from '../pages/Invest';
@@ -42,7 +44,7 @@ const TabContainer = TabNavigator(
         }
     },
     {
-        initialRouteName: 'Mine',
+        initialRouteName: 'Main',
         lazy: true,
         swipeEnabled: false,
         tabBarPosition: 'bottom',
@@ -70,13 +72,15 @@ const TabContainer = TabNavigator(
 
 const App = StackNavigator(
     {
+        User: { screen: User },
+        Account: { screen: Account },
+        Login: { screen: Login },
         Home: {
             screen: TabContainer,
             navigationOptions: {
                 //headerTitle: '开发项目',
             }
         },
-        Login: { screen: Login }
     },
     {
         headerMode: 'screen',
