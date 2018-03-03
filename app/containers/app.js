@@ -3,6 +3,7 @@ import { StackNavigator, TabNavigator, NavigationActions } from 'react-navigatio
 import Login from '../pages/Login';
 import Account from '../pages/Account';
 import User from '../pages/User';
+import LoanMore from '../pages/LoanMore';
 import Main from '../pages/Main';
 import Loan from '../pages/Loan';
 import Invest from '../pages/Invest';
@@ -72,6 +73,7 @@ const TabContainer = TabNavigator(
 
 const App = StackNavigator(
     {
+        LoanMore: { screen: LoanMore },
         User: { screen: User },
         Account: { screen: Account },
         Login: { screen: Login },

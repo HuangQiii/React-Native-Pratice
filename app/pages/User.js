@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, TextInput, TouchableOpacity, Dimensions,Image } from 'react-native';
+import { View, StyleSheet, Text, TextInput, TouchableOpacity, Dimensions,Image ,ScrollView} from 'react-native';
 
 const {width,height} = Dimensions.get('window');
 
@@ -20,6 +20,7 @@ export default class User extends Component {
 
     render() {
         return (
+            <ScrollView>
             <View style={styles.container}>
                 <View style={{width:70,height:70,borderRadius:35,overflow: 'hidden',marginTop:40,}}>
                     <Image resizeMode='stretch' style={{ width: 70, height: 70, }}  source={{uri:'https://modao.cc/uploads3/images/1003/10037631/raw_1496657304.png'}}/>
@@ -47,6 +48,7 @@ export default class User extends Component {
                     </View>
                 </TouchableOpacity>
             </View >
+            </ScrollView>
         );
     }
 }
