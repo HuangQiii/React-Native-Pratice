@@ -46,18 +46,18 @@ export default class Login extends Component {
 var styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FEFEFE',
-        paddingHorizontal:35,
         alignItems:'center',
+        paddingHorizontal:35,
+        backgroundColor: '#FEFEFE',        
     },
     title: {
-        fontSize:24,
         marginTop:60,
+        fontSize:24,
     },
     des: {
+        marginTop:10,
         fontSize:18,
         color:'#eee',
-        marginTop:10,
     },
     inputs:{
         width:width - 70,
@@ -67,15 +67,15 @@ var styles = StyleSheet.create({
         height:40,
         marginTop:10,
         borderColor:'transparent',
-        borderBottomColor:'#eee',
         borderWidth: 1,
+        borderBottomColor:'#eee',
     },
     button: {
         width:width - 70,
-        backgroundColor:'#53B851',
-        borderRadius: 5,
-        paddingVertical: 10,
         alignItems:'center',
         marginTop:25,
+        paddingVertical: 10,
+        borderRadius: 5,
+        backgroundColor:'#53B851',
     }
 });

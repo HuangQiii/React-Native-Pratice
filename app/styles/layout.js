@@ -136,7 +136,7 @@ const layout = {
     verticalCenterInLine(...arg) {
         return {
             flexDirection:'row',
-            justifyContent:'center',
+            alignItems:'center',
         }
     },
     //垂直line，水平居中，（垂直居中）
@@ -154,3 +154,5 @@ const layout = {
         }
     }
 };
+
+export default layout;

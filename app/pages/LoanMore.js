@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, TextInput, TouchableOpacity, Dimensions,Image ,ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import IconBlock from '../components/IconBlock';
+import Promote from '../components/Promote';
+import layout from '../styles/layout';
+
+const { margin, padding, border, completeCenterInLine, verticalCenterInLine, completeCenterInColumn, horizontalCenterInColumn } = layout;
 
 const {width,height} = Dimensions.get('window');
 
@@ -57,22 +62,34 @@ export default class LoanMore extends Component {
                         <Text style={styles.borderLeft}>贷款流程</Text>
                     </View>
                         <View style={{backgroundColor:'#fff',flexDirection:'row',}}>
-                            <View style={{padding:10,alignItems:'center',justifyContent:'center',}}>
-                                    <Icon name="md-link" size={25} color={'gray'} />
-                                <Text style={{fontSize:12,marginTop:15,}}>信息填写</Text>
-                            </View>
-                            <View style={{padding:10,alignItems:'center',justifyContent:'center',}}>
-                                    <Icon name="md-cafe" size={25} color={'gray'} />
-                                <Text style={{fontSize:12,marginTop:15,}}>实名认证</Text>
-                            </View>
-                            <View style={{padding:10,alignItems:'center',justifyContent:'center',}}>
-                                    <Icon name="md-umbrella" size={25} color={'gray'} />
-                                <Text style={{fontSize:12,marginTop:15,}}>电话审核</Text>
-                            </View>
-                            <View style={{padding:10,alignItems:'center',justifyContent:'center',}}>
-                                    <Icon name="md-glasses" size={25} color={'gray'} />
-                                <Text style={{fontSize:12,marginTop:15,}}>等待放款</Text>
-                            </View>
+                            <IconBlock
+                                content={'信息填写'}
+                                contentSize={12}
+                                icon={'md-link'}
+                                height={60}
+                                width={60}
+                            />
+                            <IconBlock
+                                content={'实名认证'}
+                                contentSize={12}
+                                icon={'md-cafe'}
+                                height={60}
+                                width={60}
+                            />
+                            <IconBlock
+                                content={'电话审核'}
+                                contentSize={12}
+                                icon={'md-umbrella'}
+                                height={60}
+                                width={60}
+                            />
+                            <IconBlock
+                                content={'等待放款'}
+                                contentSize={12}
+                                icon={'md-glasses'}
+                                height={60}
+                                width={60}
+                            />
                         </View>
                 </View>
                 <View style={styles.section}>
@@ -80,18 +97,30 @@ export default class LoanMore extends Component {
                         <Text style={styles.borderLeft}>所需资料</Text>
                     </View>
                         <View style={{backgroundColor:'#fff',flexDirection:'row',}}>
-                            <View style={{padding:10,alignItems:'center',justifyContent:'center',}}>
-                                    <Icon name="md-link" size={25} color={'#FDAD2D'} />
-                                <Text style={{fontSize:12,marginTop:15,}}>信用卡</Text>
-                            </View>
-                            <View style={{padding:10,alignItems:'center',justifyContent:'center',}}>
-                                    <Icon name="md-cafe" size={25} color={'#5CABF8'} />
-                                <Text style={{fontSize:12,marginTop:15,}}>运营商</Text>
-                            </View>
-                            <View style={{padding:10,alignItems:'center',justifyContent:'center',}}>
-                                    <Icon name="md-umbrella" size={25} color={'#00D29D'} />
-                                <Text style={{fontSize:12,marginTop:15,}}>身份证</Text>
-                            </View>
+                            <IconBlock
+                                content={'信用卡'}
+                                contentSize={12}
+                                icon={'md-link'}
+                                iconColor={'#FDAD2D'}
+                                height={60}
+                                width={60}
+                            />
+                            <IconBlock
+                                content={'运营商'}
+                                contentSize={12}
+                                icon={'md-cafe'}
+                                iconColor={'#5CABF8'}
+                                height={60}
+                                width={60}
+                            />
+                            <IconBlock
+                                content={'身份证'}
+                                contentSize={12}
+                                icon={'md-umbrella'}
+                                iconColor={'#00D29D'}
+                                height={60}
+                                width={60}
+                            />
                         </View>
                 </View>
                 <View style={styles.section}>
@@ -100,18 +129,8 @@ export default class LoanMore extends Component {
                     </View>
                     <Text style={{fontSize:12,}}>满18周岁，且持有信用卡的用户</Text>
                 </View>
-                <View style={{backgroundColor:'#fff',marginTop:10,}}>
-                    <View style={{height:60,justifyContent:'center',alignItems:'center'}}>
-                        <Text>呼唤朋友一起来贷款赚奖励</Text>
-                    </View>
-                    <View style={{flexDirection:'row'}}>
-                        <View style={{width:width/2,height:80,justifyContent:'center',alignItems:'center'}}>
-                            <Icon name="ios-chatbubbles" size={30} color={'#009688'} />
-                        </View>
-                        <View style={{width:width/2,height:80,justifyContent:'center',alignItems:'center'}}>
-                            <Icon name="ios-people" size={30} color={'#009688'} />
-                        </View>
-                    </View>
+                <View style={{marginTop:10,}}>
+                    <Promote />
                 </View>
             </View >
             </ScrollView>
@@ -125,8 +144,8 @@ var styles = StyleSheet.create({
         backgroundColor: '#EBEBEB',
     },
     header:{
-        backgroundColor:'#fff',
         paddingHorizontal:15,
+        backgroundColor:'#fff',
     },
     headerTop:{
         flexDirection:'row',
@@ -135,47 +154,42 @@ var styles = StyleSheet.create({
     headerHead:{
         width:50,
         height:50,
-        marginRight:10,
         borderRadius:25,
+        marginRight:10,
         overflow:'hidden',
     },
     headerTitle:{
-        fontSize:16,
         marginBottom:5,
+        fontSize:16,
     },
     headerIcon:{
-        paddingHorizontal:3,
-        paddingVertical:1,
         borderRadius:5,
         backgroundColor:'#489DF9',
-        alignItems:'center',
-        justifyContent:'center',
+        ...padding(1,3),
     },
     des:{
+        flexDirection:'row',
+        justifyContent:'space-between',
         padding:10,
         borderTopWidth:1,
         borderTopColor:'#eee',
-        flexDirection:'row',
-        justifyContent:'space-between',
     },
     section:{
-        backgroundColor:'#fff',
-        paddingHorizontal:15,
-        paddingVertical:10,
         marginTop:10,
+        backgroundColor:'#fff',
+        ...padding(10,15),
     },
     instructionTitle:{
-        flexDirection:'row',
-        alignItems:'center',
         justifyContent:'space-between',
         marginBottom:10,
+        ...verticalCenterInLine(),
     },
     borderLeft:{
-        fontSize:14,
         paddingLeft:10,
-        color:'gray',
         borderLeftWidth:2,
         borderLeftColor:'gray',
+        fontSize:14,
+        color:'gray',
     },
     more:{
         fontSize:12,
